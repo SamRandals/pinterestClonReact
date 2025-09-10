@@ -1,8 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
+// Detecta si estás en GitHub Pages (se publica en una subcarpeta)
+const repoName = "galleryWeb"; // 👈 pon aquí el nombre exacto de tu repo
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+
 export default defineConfig({
-    base: "/galleryWeb/",
+  base: isGithubPages ? `/${repoName}/` : "./",
   plugins: [react()],
-})
+});
