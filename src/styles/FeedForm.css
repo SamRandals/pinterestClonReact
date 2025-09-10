@@ -1,0 +1,125 @@
+.form__container-max-width{
+    display: flex ;
+    width: 100%;
+    overflow-y: auto;
+}
+.pin__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__wrapper-pin{
+    display: flex;
+    padding: 10px 10px 0px 10px;
+}
+
+.pin__image-preview{
+    display: flex;
+    flex-grow: 1;
+}
+.icon{
+    color: #6e3500;
+    padding: 3px;
+    border-radius: 10px;
+    transition: background 0.5s ease, color .2s ease;
+}
+.icon:hover{
+    background-color: #e9af79;
+    color: #fff;
+}
+.form__content{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.pin__image-preview{
+    display: flex;
+    justify-content: center;
+    
+}
+.upload__image-box{
+    background-color: #cccccc;
+    width: 350px;
+    min-height: 420px;
+    max-height: 420px;
+    border-radius: 10px;
+    position: relative;
+}
+.p__desc-throwImage{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 11%;
+    
+}
+.upload__image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.form__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+    padding: 5px;
+}
+.form__content input{
+    display: flex;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.div__input-container{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    border-radius: 5px;
+    border: 2px solid #afafaf;
+    padding: 15px 5px 5px 5px;
+    margin: 15px 0px 10px 0px;
+}
+
+
+.form__content input, select, textarea, button{
+    
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.form__content textarea{
+    padding-top: 10px;
+}
+.div__input-container:focus-within{
+    border: 3px solid #07cdff;
+}
+.form__content input:focus{
+    outline: none;
+
+}
+.form__content select:focus{
+    outline: none;
+}
+.form__content textarea:focus{
+    outline: none;
+}
+
+
+.subheader{
+    display: flex;
+    justify-content: end;
+    padding: 2px;
+    height: 50px;
+}
+.subheader button{
+    margin-right: 30px;
+    height: 100%;
+    width: 100px;
+    border:none;
+    border-radius: 5px;
+    background-color: #FE8619;
+    color: #ffffff;
+}

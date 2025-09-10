@@ -1,0 +1,31 @@
+.aside__menu-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     grid-area: sidebar;
+    
+    padding: 5px;
+    width: auto;
+    border-right: #E5E5E0;
+}
+
+.logo__container{
+    margin-top: 25px;
+
+}
+        
+.aside__buttons-upload{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 7;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+}
+.configuration{
+    flex-grow: 1;
+}

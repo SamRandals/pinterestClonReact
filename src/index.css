@@ -1,0 +1,55 @@
+body, ul, li ,p ,h1, h2, h3, p, textarea, input, button, summary, details, select, option, div, header, footer, main, section{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+body{
+  display: flex;
+  font-family: sans-serif;
+  background-color: #fff;
+  max-height: 100dvh;
+  
+  
+
+
+
+/* Colors */
+
+--text-color:#222;
+--button-color:#E60023;
+--border-color:#E5E5E0;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+width: 100%;
+  
+}
+
+
+
+/* lol */
+.layout {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+  height: 100dvh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  
+}
+
+.header {
+  grid-area: header;
+
+}
+
+.content {
+  grid-area: content;
+}
