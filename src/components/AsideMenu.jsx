@@ -11,8 +11,8 @@ export default function AsideMenu({setFeedState}){
     
     <aside className="aside__menu-container">
         <div className="logo__container">
-            <img src="/logos/PintaLessLogo.png"
-            width={25} height={25} alt="" />
+          <img src={`${import.meta.env.BASE_URL}logos/PintaLessLogo.png`} alt="logo" />
+
         </div>
         <div className="aside__buttons-upload">
           <BiHome onClick={()=>setFeedState("Home")} alt="Buenas tetutrras" className="icon"></BiHome>
