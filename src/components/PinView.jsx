@@ -27,7 +27,7 @@ export function PinView({ id, onBack }) {
     <div className="pinview__layout">
       {/* Aside con botón para volver */}
       <aside className="pinview__aside">
-        <button onClick={onBack} className="aside__toggle">⇦ Volver</button>
+        <button onClick={onBack} className="aside__toggle">⇦</button>
       </aside>
 
       {/* Main */}
@@ -42,13 +42,13 @@ export function PinView({ id, onBack }) {
         </div>
 
         {/* Otros pines */}
-        <div className="pinview__others">
+        
           {otherPins.map((p) => (
             <div key={p.id} className="pin__container-small">
               {p.image && <img src={p.image} alt={p.title} className="image__pin-small" />}
             </div>
           ))}
-        </div>
+        
       </main>
     </div>
   );

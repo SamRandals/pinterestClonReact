@@ -11,13 +11,16 @@ import { PinView } from './components/PinView'
 function App() {
   const [feedState, setFeedState] = useState("Home")
   const [feed, setFeed] = useState([]);
+  const [filteredFeed, setFilteredFeed] = useState([]); // 👈 nuevo estado para la búsqueda
   const [cargando, setCargando] = useState(true);
-  const [selectedId, setSelectedId] = useState(null); // 👈 nuevo estado
+  const [selectedId, setSelectedId] = useState(null);
+  const [search, setSearch] = useState(""); // 👈 estado del input de búsqueda
 
   async function cargar() {
     await seedIfEmpty();
     const todas = await db.feed.orderBy("createdAt").reverse().toArray();
     setFeed(todas);
+    setFilteredFeed(todas); // inicializamos filtrado con todos
     setCargando(false);
   }
 
@@ -25,9 +28,24 @@ function App() {
     await db.feed.delete(id);
     await cargar();
     if (selectedId === id) {
-      setSelectedId(null); // 👈 si borras el que está abierto, volver al FeedList
+      setSelectedId(null);
     }
   }
+
+  // Filtrar cuando cambia search o feed
+  useEffect(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) {
+      setFilteredFeed(feed);
+    } else {
+      setFilteredFeed(
+        feed.filter(f =>
+          f.title?.toLowerCase().includes(q) ||
+          f.desc?.toLowerCase().includes(q)
+        )
+      );
+    }
+  }, [search, feed]);
 
   useEffect(() => {
     cargar().catch(e => console.log(e));
@@ -38,7 +56,7 @@ function App() {
   return (
     <div className="layout">
       <AsideMenu setFeedState={setFeedState} />
-      <Header />
+      <Header searchValue={search} setSearchValue={setSearch} />
 
       {/* Mostrar PinView si hay seleccionado */}
       {selectedId ? (
@@ -46,12 +64,16 @@ function App() {
       ) : (
         <>
           {feedState === "Home" && (
-            <FeedList 
-              feed={feed} 
-              deletePin={deletePin} 
-              onSelectPin={(id) => setSelectedId(id)} // 👈 pasamos el click
-            />
+            <>
+              {/* 👇 FeedList recibe la lista filtrada */}
+              <FeedList 
+                feed={filteredFeed} 
+                deletePin={deletePin} 
+                onSelectPin={(id) => setSelectedId(id)}
+              />
+            </>
           )}
+
           {feedState === "Form" && <FeedForm onAdd={cargar} />}
         </>
       )}

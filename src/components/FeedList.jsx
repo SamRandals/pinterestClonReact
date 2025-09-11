@@ -59,7 +59,7 @@ export default function FeedList({ feed, deletePin, onSelectPin }) {
                       ? "div__options-container show"
                       : "div__options-container hidden"
                   }>
-                    <small className='text__inspired-small-delete-or-download-button'>este pin esta inspirado en tu actividad reciente</small>
+                    <small className='text__inspired-small-delete-or-download-button'>esta imagen esta inspirado en tu actividad reciente</small>
                   <button  onClick={() => deletePin(f.id)} className='delete__button-click'>Eliminar</button>
                   <button onClick={() => downloadPin(f.id)} className="download__button-image">Descargar</button>
                 </div>
