@@ -21,7 +21,7 @@ export default function Header({setSearchValue}){
         </div>
         <div className="perfil__container-image">
             <div className="image__container">
-                <img src="https://i.pinimg.com/736x/c8/cf/08/c8cf08ead61961cda50545f1648eda12.jpg" alt=""  />
+                <img src="https://i.pinimg.com/736x/b0/02/78/b00278f0e21246f8ac0eab6f6b9a533f.jpg" alt="cat"  />
             </div>
             <BiArrowToBottom/>
         </div>
